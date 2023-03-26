@@ -30,7 +30,7 @@ jobs:
     - name: 🔋 Dependencies are installed.
       run: poetry install
     - name: run test
-      run:
+      run: |
         cd ./project
-        python3 manage.py test
+        poetry run python3 manage.py test library
         
