@@ -104,7 +104,7 @@ def add_book(request: HttpRequest) -> HttpResponse:
 
 def not_valid(request: HttpRequest) -> HttpResponse:
     context = {'message': '''Проверьте коректность введённых вами данных! Убедитесь что заполнили все обязательные поля!
-     Слаг должен состоять из букв, цифр, латинских цифр, нижнего подчёркивания и дефиса!
+     Слаг должен состоять из букв, цифр, латинских букв, нижнего подчёркивания и дефиса!
      Слаг должен быть уникальным!''',
                "menu": menu}
     return render(request, template_name="library/form_not_valid.html", context=context)
