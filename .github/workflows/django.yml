@@ -32,5 +32,5 @@ jobs:
     - name: run test
       run:
         cd ./project
-        poetry run python3 manage.py test library
+        python3 manage.py test
         
