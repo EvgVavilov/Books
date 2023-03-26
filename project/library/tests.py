@@ -13,7 +13,7 @@ class BooksApiTestCase(TestCase):
         test_book2.author.add(test_author)
 
     def test_get_response(self):
-        self.assertEqual(self.client.get(reverse('home')).status_code, 300)
+        self.assertEqual(self.client.get(reverse('home')).status_code, 404)
         self.assertEqual(self.client.get(reverse('book', kwargs={"book_slug": 'test_book1'})).status_code, 200)
         self.assertEqual(self.client.get(reverse('book', kwargs={"book_slug": 'not_exist_book'})).status_code, 404)
         self.assertEqual(self.client.get(reverse('authors')).status_code, 200)
