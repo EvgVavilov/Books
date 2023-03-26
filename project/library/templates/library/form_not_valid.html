@@ -1,0 +1,11 @@
+{% extends 'library/base.html' %}
+
+{% block content %}
+
+{{ message }}
+
+<input type="button" onclick="history.back();" value="Назад"/>
+<br>
+<a href="{% url 'home' %}">Домой</a>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'library/base.html' %}
+
+{% block content %}
+
+<h2>{{book.name}}</h2>
+
+{% if book.photo %}
+<p><img class="" src="{{book.photo.url}}" width="30%"></p>
+{% endif %}
+
+<p>Авторы:
+    {% for author in book.author.all %}
+    <a href="{{ author.get_absolute_url }}">{{ author.name }}</a>,
+    {% endfor %}
+</p>
+
+<p> Описание: {{ book.about_book }}</p>
+
+<a href="{{ book.link_to_shop }}"> В магазин! </a>
+
+<hr>
+<input type="button" onclick="history.back();" value="Назад"/>
+<br>
+<a href="{% url 'home' %}">Домой</a>
+
+{% endblock %}

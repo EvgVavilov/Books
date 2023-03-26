@@ -1,0 +1,26 @@
+{% extends 'library/base.html' %}
+
+{% block content %}
+
+<table class="">
+    <tr bgcolor="yellow"><td>Обложка</td><td>Название</td><td>Авторы</td></tr>
+    {% for b in books %}
+    <tr>
+        {% if b.photo %}
+            <td><img src="{{ b.photo.url }}" width="120px"></td>
+        {% else %}
+            <td width="100px"></td>
+        {% endif %}
+        <td class="left-chapters" >{{ b.name }}</td>
+        <td class="left-chapters" >
+            {% for author in b.author.all %}
+            <a href="{{ author.get_absolute_url}} "> {{ author.name }} </a>,
+            {% endfor %}
+        </td>
+        <td><form action="{{ b.get_absolute_url }}"><button>Подробнее</button></form></td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+{% endblock %}
